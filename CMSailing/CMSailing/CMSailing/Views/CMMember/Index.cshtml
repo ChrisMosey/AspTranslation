@@ -1,0 +1,117 @@
+﻿@model IEnumerable<CMSailing.Models.member>
+
+@{
+    ViewBag.Title = CMSailing.App_GlobalResources.Tranlations.members;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink(CMSailing.App_GlobalResources.Tranlations.addMember, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spouseFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spouseLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.homePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yearJoined)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.taskExempt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.useCanadaPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.province.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spouseFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spouseLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.homePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yearJoined)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.taskExempt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.useCanadaPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.province.name)
+        </td>
+        <td>
+            @Html.ActionLink(CMSailing.App_GlobalResources.Tranlations.edit, "Edit", new { id=item.memberId }) |
+            @Html.ActionLink(CMSailing.App_GlobalResources.Tranlations.details, "Details", new { id=item.memberId }) |
+            @Html.ActionLink(CMSailing.App_GlobalResources.Tranlations.delete, "Delete", new { id=item.memberId })
+        </td>
+    </tr>
+}
+
+</table>
